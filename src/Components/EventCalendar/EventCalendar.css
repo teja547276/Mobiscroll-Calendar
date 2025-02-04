@@ -1,0 +1,82 @@
+.calendar-container {
+    background: white;
+    padding: 20px; /* Reduced padding slightly */
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 10px;
+    min-height: 650px;
+    overflow: hidden;
+   
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out; /* Move calendar slightly up */
+}
+.calendar-container:hover {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(-5deg);
+}
+
+.calendar-title {
+    color: #34495e;
+    margin-bottom: 15px; /* Reduced margin */
+    text-align: center;
+}
+
+.calendar-wrapper {
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    max-height: 750px; /* Prevents overflow */
+    overflow: auto;
+}
+
+.custom-calendar {
+    width: 100%;
+    height: 100%;
+    max-height:750px;
+    max-height: 750px;
+}
+
+/* Toolbar Buttons Hover Effect */
+.rbc-toolbar button {
+    transition: background 0.3s ease, transform 0.2s ease;
+    transform-style: preserve-3d;
+}
+
+.rbc-toolbar button:hover {
+    transform: translateY(-2px);
+    background: #e0e0e0;
+}
+
+/* Event hover effect */
+.rbc-event {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.rbc-event:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05) translateZ(5px);
+}
+
+/* Highlight today's date */
+.rbc-today {
+    background-color: #f9f9f9;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
